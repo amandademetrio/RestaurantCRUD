@@ -14,7 +14,6 @@ module.exports = {
         })
     },
     add_widget: function(req,res) {
-
         var restaurant = new Restaurant({
             name:req.body.name,
             cuisine:req.body.cuisine

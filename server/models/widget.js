@@ -21,7 +21,8 @@ var RestaurantSchema = new mongoose.Schema({
     name: {
         type:String,
         required: [true,'Restaurant field is required'],
-        minlength: [3,'Restaurant must have at least 3 characters']
+        minlength: [3,'Restaurant must have at least 3 characters'],
+        unique: [true,'Restaurant name must be new']
     },
     cuisine: {
         type:String,
@@ -33,6 +34,10 @@ var RestaurantSchema = new mongoose.Schema({
         default: 0
     },
     deletable: {
+        type:Boolean,
+        default: false
+    },
+    showEditPanel: {
         type:Boolean,
         default: false
     },

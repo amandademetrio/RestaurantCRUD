@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-12 mb-3">
+      <h3>Add Review for {{restaurant.name}}</h3>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
+      <form (submit)="submitNewReview()">
+        <div class="form-group">
+          <label>Your name:</label>
+            <input type="text" class="form-control" name="review.username" [(ngModel)]="review.username">
+            <div *ngIf="errors['username']" class="alert alert-danger mt-2" role="alert">
+              {{errors['username']['message']}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Stars</label>
+            <select class="form-control" name="review.rating" [(ngModel)]="review.rating">
+              <option>5</option>
+              <option>4</option>
+              <option>3</option>
+              <option>2</option>
+              <option>1</option>
+            </select>
+            <small>(If you don't select a star rating, the default will be 5 stars)</small>
+          </div>
+          <div class="form-group">
+              <label>Your review</label>
+              <textarea class="form-control" rows="3" name="review.review" [(ngModel)]="review.review"></textarea>
+              <div *ngIf="errors['review']" class="alert alert-danger mt-2" role="alert">
+                  {{errors['review']['message']}}
+                </div>
+            </div>
+        <button type="submit" class="btn btn-primary float-right ml-2">Add</button>
+      </form>
+      <button type="button" class="btn btn-light float-right" (click)="cancelAction()">Cancel</button>
+    </div>
+  </div>
+  
+  

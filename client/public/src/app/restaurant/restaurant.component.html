@@ -1,0 +1,19 @@
+<button type="button" class="btn btn-info mb-2" [routerLink]="['/addreview',restaurant._id]">Add Review</button>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Customer</th>
+        <th scope="col">Stars</th>
+        <th scope="col">Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let review of currentReviews.reverse()">
+          <td>{{review.username}}</td>
+          <td>{{review.rating}}</td>
+          <td>{{review.review}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
